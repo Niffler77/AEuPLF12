@@ -1,7 +1,7 @@
-﻿using System.Xml;
-using System.Xml.Linq;
+﻿using System.Globalization;
+using System.Xml;
 
-namespace Testdatengenerator
+namespace TestDatenGenerator
 {
     internal class DataGeneratorXML : DataGenerator
     {
@@ -9,13 +9,13 @@ namespace Testdatengenerator
         {
             
             var tempfile = Path.GetTempPath();
-            tempfile = Path.Combine(tempfile, "testdatenxml.xml");
+            tempfile = Path.Combine(tempfile, "testDatenXML.xml");
 
             using var xml = XmlWriter.Create(tempfile);
             xml.WriteStartElement("Temperatures");
             foreach (var item in DataSet)
             {
-                xml.WriteElementString("Temperature", item.ToString());
+                xml.WriteElementString("Temperature", item.ToString( CultureInfo.InvariantCulture ));
             }
             xml.WriteEndElement();
             xml.Close();

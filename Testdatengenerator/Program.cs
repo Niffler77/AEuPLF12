@@ -1,4 +1,4 @@
-﻿namespace Testdatengenerator
+﻿namespace TestDatenGenerator
 {
     internal class Program
     {
@@ -27,7 +27,7 @@
                     1 => new DataGeneratorCSV(),
                     2 => new DataGeneratorXML(),
                     3 => new DataGeneratorJson(),
-                    _ => throw new ArgumentOutOfRangeException()
+                    _ => throw new ArgumentOutOfRangeException(),
                 };
             }
             else
@@ -38,7 +38,7 @@
                     "csv" => new DataGeneratorCSV(),
                     "xml" => new DataGeneratorXML(),
                     "json" => new DataGeneratorJson(),
-                    _ => throw new ArgumentOutOfRangeException()
+                    _ => throw new ArgumentOutOfRangeException(),
                 };
             }
 

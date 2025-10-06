@@ -1,7 +1,6 @@
-﻿using System.Data;
-using System.Text.Json;
+﻿using System.Text.Json;
 
-namespace Testdatengenerator
+namespace TestDatenGenerator
 {
     internal class DataGeneratorJson : DataGenerator
     {
@@ -10,8 +9,7 @@ namespace Testdatengenerator
         {
             var json = JsonSerializer.Serialize<DataGenerator>(this);
             var tempfile = Path.GetTempPath();
-            tempfile = Path.Combine(tempfile, "testdatenjson.json");
-
+            tempfile = Path.Combine(tempfile, "testDatenJSON.json");
             File.WriteAllText(tempfile, json);
         }
     }
