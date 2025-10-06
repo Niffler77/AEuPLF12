@@ -1,7 +1,6 @@
-﻿using System.Data;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 
-namespace Testdatengenerator
+namespace TestDatenGenerator
 {
     [JsonSerializable(typeof(DataGenerator))]
     internal class DataGenerator

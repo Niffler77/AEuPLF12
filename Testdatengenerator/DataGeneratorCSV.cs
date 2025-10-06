@@ -1,7 +1,6 @@
 ﻿using System.Text;
-using static System.Net.Mime.MediaTypeNames;
 
-namespace Testdatengenerator 
+namespace TestDatenGenerator 
 {
     internal class DataGeneratorCSV : DataGenerator
     {
@@ -12,10 +11,10 @@ namespace Testdatengenerator
 
             foreach (var item in DataSet)
             {
-                csv.Append(item.ToString() + ";");
+                csv.Append(item + ";");
             }
             var tempfile = Path.GetTempPath();
-            tempfile = Path.Combine(tempfile, "testdatencsv.csv");
+            tempfile = Path.Combine(tempfile, "testDatenCSV.csv");
 
             File.WriteAllText(tempfile, csv.ToString());
         }
