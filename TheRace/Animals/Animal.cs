@@ -31,21 +31,28 @@
                 (CurrentStamina + StaminaRegen) <= MaxStamina)
             {
                 CurrentStamina += StaminaRegen;
+                Console.WriteLine($"{GetName()} Regained Stamina {StaminaRegen} | Stamina {CurrentStamina}/{MaxStamina}");
             }
-            var moveDistance = random.Next( (int)MinSpeed, (int)(MaxSpeed + 1) );
+            var moveDistance = random.Next( (int) MinSpeed, (int)(MaxSpeed + 1) );
 
-            var staminaRemove = moveDistance / 2;
-            if (CurrentStamina - staminaRemove >= 0  )
+            var staminaDrain = moveDistance / 2;
+            if (CurrentStamina - staminaDrain >= 0  )
             {
-                CurrentStamina -= staminaRemove;
-                return moveDistance;
+                CurrentStamina -= staminaDrain;
+                Console.WriteLine( $"{GetName()} Moved: {moveDistance} | Lost Stamina: {staminaDrain}"   );
             }
             else
             {
-                return moveDistance / 10 ;
+                Console.WriteLine($"{GetName()} Not Enough Stamina Needed: {staminaDrain} | Stamina: {CurrentStamina}/{MaxStamina}");
+                moveDistance = 0;
             }
+
+            Console.WriteLine( $"{GetName()} Stamina: {CurrentStamina}/{MaxStamina}" );
+            return moveDistance;
         }
 
         internal abstract void makeNoise();
+
+        protected string GetName() => $"{Name} |";
     }
 }

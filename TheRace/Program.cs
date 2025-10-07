@@ -29,6 +29,7 @@ namespace TheRace
                 {
                     var currentAnimal = racer.Key;
 
+
                     race[currentAnimal] += currentAnimal.Move();
                     if (race[currentAnimal] > 1000 )
                     {

@@ -5,7 +5,7 @@
     {
         internal override void makeNoise()
         {
-            Console.WriteLine( Name + " Woof" );
+            Console.WriteLine($"{GetName()} Woof" );
         }
     }
 }

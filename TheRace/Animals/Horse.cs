@@ -6,7 +6,7 @@
     {
         internal override void makeNoise()
         {
-            Console.WriteLine( Name +  " wieheren" );
+            Console.WriteLine( $"{GetName()} whieren" );
         }
     }
 }

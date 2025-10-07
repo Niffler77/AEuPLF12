@@ -5,7 +5,7 @@
     {
         internal override void makeNoise()
         {
-            Console.WriteLine( Name + " Anitoliperen" );
+            Console.WriteLine($"{GetName()} Anitoliperen" );
         }
     }
 }
