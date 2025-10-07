@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOPVererbungUA1", "OOPVerer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testdatengenerator", "Testdatengenerator\Testdatengenerator.csproj", "{8379EA49-AC18-4C01-9D83-70CC5A01D23E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheRace", "TheRace\TheRace.csproj", "{4D096D2F-228A-43E4-9D7F-F3F532EC4FFB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{8379EA49-AC18-4C01-9D83-70CC5A01D23E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8379EA49-AC18-4C01-9D83-70CC5A01D23E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8379EA49-AC18-4C01-9D83-70CC5A01D23E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D096D2F-228A-43E4-9D7F-F3F532EC4FFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D096D2F-228A-43E4-9D7F-F3F532EC4FFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D096D2F-228A-43E4-9D7F-F3F532EC4FFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D096D2F-228A-43E4-9D7F-F3F532EC4FFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
