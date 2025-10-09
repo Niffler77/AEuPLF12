@@ -1,4 +1,7 @@
-﻿using TheRace.Animals;
+﻿using TheRace.Aliens;
+using TheRace.Animals;
+using TheRace.Cars;
+using TheRace.Humans;
 
 namespace TheRace
 {
@@ -8,7 +11,7 @@ namespace TheRace
         {
             Console.WriteLine("Hello, World!");
             var isGameRunning = true;
-            var race = new Dictionary<Animal, double>
+            var race = new Dictionary<IRacer, double>
                        {
                            {
                                new Lion("Lion", 5 , 60, 60 ), 0
@@ -22,6 +25,15 @@ namespace TheRace
                            {
                                new Antilope("Antilop", 20 ,80 ,40), 0 
                            },
+                           {
+                               new Human("Jean", 10, 10,1.0f,4.0f),0
+                           },
+                           {
+                               new Alien("ET", "Earth", 10, 0, 1000), 0
+                           },
+                           {
+                               new Car("MC Queen", "ka", 10, 10, 500), 0
+                           }
                        };
             do
             {
@@ -34,7 +46,6 @@ namespace TheRace
                     if (race[currentAnimal] > 1000 )
                     {
                         isGameRunning = false;
-                        Congratulation(currentAnimal);
                         break;
                     }
                 }

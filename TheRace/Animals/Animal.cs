@@ -1,12 +1,12 @@
 ﻿namespace TheRace.Animals
 {
-    internal abstract class Animal
+    internal abstract class Animal : IRacer
     {
         internal string Name { get; set; }
 
-        private float MaxSpeed { get; set; }
+        public float MaxSpeed { get; set; }
 
-        private float MinSpeed { get; set; }
+        public float MinSpeed { get; set; }
 
         private int MaxStamina { get; set; }
 
@@ -24,7 +24,7 @@
             StaminaRegen = maxStamina / 2;
         }
 
-        internal float Move()
+        public float Move()
         {
             var random = new Random();
             if( CurrentStamina != MaxStamina && 
@@ -51,6 +51,7 @@
             return moveDistance;
         }
 
+        public void WinningAction() => makeNoise();
         internal abstract void makeNoise();
 
         protected string GetName() => $"{Name} |";
