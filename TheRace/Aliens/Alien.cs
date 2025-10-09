@@ -17,7 +17,7 @@
 
         public void WinningAction()
         {
-            Console.WriteLine($"{Name} HUHRA");
+            Console.WriteLine( $"{Name} HUHRA" );
         }
     }
 }

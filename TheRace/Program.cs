@@ -7,32 +7,32 @@ namespace TheRace
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main( string[] args )
         {
-            Console.WriteLine("Hello, World!");
+            Console.WriteLine( "Hello, World!" );
             var isGameRunning = true;
             var race = new Dictionary<IRacer, double>
                        {
                            {
-                               new Lion("Lion", 5 , 60, 60 ), 0
+                               new Lion( "Lion", 5, 60, 60 ), 0
                            },
                            {
-                               new Horse("Horse", 2, 80, 100 ), 0
+                               new Horse( "Horse", 2, 80, 100 ), 0
                            },
                            {
-                               new Wolf("Wolf", 8, 70, 50), 0
+                               new Wolf( "Wolf", 8, 70, 50 ), 0
                            },
                            {
-                               new Antilope("Antilop", 20 ,80 ,40), 0 
+                               new Antilope( "Antilop", 20, 80, 40 ), 0
                            },
                            {
-                               new Human("Jean", 10, 10,1.0f,4.0f),0
+                               new Human( "Jean", 10, 10, 1.0f, 4.0f ), 0
                            },
                            {
-                               new Alien("ET", "Earth", 10, 0, 1000), 0
+                               new Alien( "ET", "Earth", 10, 0, 1000 ), 0
                            },
                            {
-                               new Car("MC Queen", "ka", 10, 10, 500), 0
+                               new Car( "MC Queen", "ka", 10, 10, 500 ), 0
                            }
                        };
             do
@@ -41,21 +41,19 @@ namespace TheRace
                 {
                     var currentRacer = racer.Key;
 
-
                     race[currentRacer] += currentRacer.Move();
-                    if (race[currentRacer] > 1000 )
+                    if( race[currentRacer] > 1000 )
                     {
                         isGameRunning = false;
-                        Congratulation(currentRacer);
+                        Congratulation( currentRacer );
                         break;
                     }
                 }
             }
             while( isGameRunning );
-            
         }
 
-        internal static void Congratulation(IRacer racer)
+        internal static void Congratulation( IRacer racer )
         {
             racer.WinningAction();
         }

@@ -17,7 +17,7 @@
 
         public void WinningAction()
         {
-            Console.WriteLine($"{Name} HUB");
+            Console.WriteLine( $"{Name} HUB" );
         }
     }
 }

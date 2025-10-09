@@ -9,6 +9,5 @@
         internal float Move();
 
         internal void WinningAction();
-
     }
 }

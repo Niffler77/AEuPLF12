@@ -27,23 +27,23 @@
         public float Move()
         {
             var random = new Random();
-            if( CurrentStamina != MaxStamina && 
-                (CurrentStamina + StaminaRegen) <= MaxStamina)
+            if( CurrentStamina != MaxStamina && (CurrentStamina + StaminaRegen) <= MaxStamina )
             {
                 CurrentStamina += StaminaRegen;
-                Console.WriteLine($"{GetName()} Regained Stamina {StaminaRegen} | Stamina {CurrentStamina}/{MaxStamina}");
+                Console.WriteLine( $"{GetName()} Regained Stamina {StaminaRegen} | Stamina {CurrentStamina}/{MaxStamina}" );
             }
-            var moveDistance = random.Next( (int) MinSpeed, (int)(MaxSpeed + 1) );
+
+            var moveDistance = random.Next( (int)MinSpeed, (int)(MaxSpeed + 1) );
 
             var staminaDrain = moveDistance / 2;
-            if (CurrentStamina - staminaDrain >= 0  )
+            if( CurrentStamina - staminaDrain >= 0 )
             {
                 CurrentStamina -= staminaDrain;
-                Console.WriteLine( $"{GetName()} Moved: {moveDistance} | Lost Stamina: {staminaDrain}"   );
+                Console.WriteLine( $"{GetName()} Moved: {moveDistance} | Lost Stamina: {staminaDrain}" );
             }
             else
             {
-                Console.WriteLine($"{GetName()} Not Enough Stamina Needed: {staminaDrain} | Stamina: {CurrentStamina}/{MaxStamina}");
+                Console.WriteLine( $"{GetName()} Not Enough Stamina Needed: {staminaDrain} | Stamina: {CurrentStamina}/{MaxStamina}" );
                 moveDistance = 0;
             }
 
@@ -52,6 +52,7 @@
         }
 
         public void WinningAction() => makeNoise();
+
         internal abstract void makeNoise();
 
         protected string GetName() => $"{Name} |";
