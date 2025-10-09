@@ -39,13 +39,14 @@ namespace TheRace
             {
                 foreach( var racer in race )
                 {
-                    var currentAnimal = racer.Key;
+                    var currentRacer = racer.Key;
 
 
-                    race[currentAnimal] += currentAnimal.Move();
-                    if (race[currentAnimal] > 1000 )
+                    race[currentRacer] += currentRacer.Move();
+                    if (race[currentRacer] > 1000 )
                     {
                         isGameRunning = false;
+                        Congratulation(currentRacer);
                         break;
                     }
                 }
@@ -54,9 +55,9 @@ namespace TheRace
             
         }
 
-        internal static void Congratulation(Animal animal)
+        internal static void Congratulation(IRacer racer)
         {
-            animal.makeNoise();
+            racer.WinningAction();
         }
     }
 }
