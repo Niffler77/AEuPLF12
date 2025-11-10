@@ -46,11 +46,11 @@
             }
         }
 
-        public static void ChooseFruit( string[] fruits, int nr )
+        public static void ChooseFruit( string[] fruits, int numbers )
         {
-            if( nr >= 1 && nr <= fruits.Length )
+            if( numbers >= 1 && numbers <= fruits.Length )
             {
-                Console.WriteLine( $"Frucht {nr}: {fruits[nr - 1]}" );
+                Console.WriteLine( $"Frucht {numbers}: {fruits[numbers - 1]}" );
             }
             else
             {

@@ -1,4 +1,4 @@
-﻿namespace ObserverMusterExample
+﻿namespace ObserverMusterExample.EventListeners
 {
     public class EmailAlertsListener : IEventListeners
     {

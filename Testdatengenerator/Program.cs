@@ -1,32 +1,30 @@
-﻿namespace TestDatenGenerator
+﻿using Testdatengenerator.DataGenerators;
+
+namespace TestDatenGenerator
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main( string[] args )
         {
-            Console.WriteLine("Hello, Word!");
+            Console.WriteLine( "Hello, Word!" );
 
-            Console.WriteLine("Pick the Type of the DataGenerator:" +
-                "\n - 1. CSV" +
-                "\n - 2. XML" +
-                "\n - 3. Json");
+            Console.WriteLine( "Pick the Type of the DataGenerator:" + "\n - 1. CSV" + "\n - 2. XML" + "\n - 3. Json" );
 
             var input = Console.ReadLine();
 
-            if (input is null)
+            if( input is null )
             {
                 return;
             }
 
             DataGenerator dataGenerator;
-            if (int.TryParse(input, out int result))
+            if( int.TryParse( input, out int result ) )
             {
-
                 dataGenerator = result switch
                 {
-                    1 => new DataGeneratorCSV(),
-                    2 => new DataGeneratorXML(),
-                    3 => new DataGeneratorJson(),
+                    1 => new DataGenerator( new DataGeneratorCSV() ),
+                    2 => new DataGenerator( new DataGeneratorXML() ),
+                    3 => new DataGenerator( new DataGeneratorJson() ),
                     _ => throw new ArgumentOutOfRangeException(),
                 };
             }
@@ -35,18 +33,15 @@
                 var lowerCaseInput = input?.ToLower();
                 dataGenerator = lowerCaseInput switch
                 {
-                    "csv" => new DataGeneratorCSV(),
-                    "xml" => new DataGeneratorXML(),
-                    "json" => new DataGeneratorJson(),
-                    _ => throw new ArgumentOutOfRangeException(),
+                    "csv"  => new DataGenerator( new DataGeneratorCSV() ),
+                    "xml"  => new DataGenerator( new DataGeneratorXML() ),
+                    "json" => new DataGenerator( new DataGeneratorJson() ),
+                    _      => throw new ArgumentOutOfRangeException(),
                 };
             }
 
-            dataGenerator.createData(0, 100);
+            dataGenerator.createData( 0, 100 );
             dataGenerator.saveData();
         }
-
-
-
     }
 }
