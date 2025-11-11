@@ -6,21 +6,21 @@ namespace ObserverMusterExample
     {
         private List<IEventListeners> listeners = [];
 
-        public void subscribe( EventType eventType, IEventListeners listener )
+        public void Subscribe( EventType eventType, IEventListeners listener )
         {
             listeners.Add( listener );
         }
 
-        public void unsubscribe( EventType eventType, IEventListeners listener )
+        public void Unsubscribe( EventType eventType, IEventListeners listener )
         {
             listeners.Remove( listener );
         }
 
-        public void notify( EventType eventType, string data )
+        public void Notify( EventType eventType, string data )
         {
             foreach( var listener in listeners )
             {
-                listener.update( data );
+                listener.Update( data );
             }
         }
     }

@@ -2,8 +2,9 @@
 {
     internal class LoggingListener : IEventListeners
     {
-        public void update( string filename )
+        public void Update( string filename )
         {
+            Console.WriteLine( "Logging File:" + filename );
         }
     }
 }

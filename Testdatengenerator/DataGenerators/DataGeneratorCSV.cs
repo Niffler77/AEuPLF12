@@ -6,7 +6,7 @@ namespace Testdatengenerator.DataGenerators
 {
     internal class DataGeneratorCSV : IDataGenerator
     {
-        public void saveData( List<double> input )
+        public void SaveData( List<double> input )
         {
             var csv = new StringBuilder();
 

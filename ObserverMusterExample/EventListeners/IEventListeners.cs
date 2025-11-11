@@ -2,6 +2,6 @@
 {
     public interface IEventListeners
     {
-        void update( string filename );
+        void Update( string filename );
     }
 }

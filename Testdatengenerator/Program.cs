@@ -40,8 +40,8 @@ namespace TestDatenGenerator
                 };
             }
 
-            dataGenerator.createData( 0, 100 );
-            dataGenerator.saveData();
+            dataGenerator.CreateData( 0, 100 );
+            dataGenerator.SaveData();
         }
     }
 }

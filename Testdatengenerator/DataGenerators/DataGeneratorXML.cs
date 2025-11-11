@@ -9,7 +9,7 @@ namespace Testdatengenerator.DataGenerators
 {
     internal class DataGeneratorXML : IDataGenerator
     {
-        public void saveData( List<double> input )
+        public void SaveData( List<double> input )
         {
             var tempfile = Path.GetTempPath();
             tempfile = Path.Combine( tempfile, "testDatenXML.xml" );

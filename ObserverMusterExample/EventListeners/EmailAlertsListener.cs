@@ -2,8 +2,9 @@
 {
     public class EmailAlertsListener : IEventListeners
     {
-        public void update( string filename )
+        public void Update( string filename )
         {
+            Console.WriteLine( "E-Mail: " + filename );
         }
     }
 }

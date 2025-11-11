@@ -1,6 +1,4 @@
-﻿using System.Text.Json.Serialization;
-
-using TestDatenGenerator.DataGenerators;
+﻿using TestDatenGenerator.DataGenerators;
 
 namespace TestDatenGenerator
 {
@@ -12,11 +10,11 @@ namespace TestDatenGenerator
 
         internal DataGenerator( IDataGenerator dataGenerator )
         {
-            DataSet = new List<double>();
+            DataSet = [];
             this.dataGenerator = dataGenerator;
         }
 
-        internal void createData( double min, double max, int amount )
+        internal void CreateData( double min, double max, int amount )
         {
             Random random = new Random();
             for( int i = 0; i < amount; i++ )
@@ -25,8 +23,8 @@ namespace TestDatenGenerator
             }
         }
 
-        internal void createData( int min, int max ) => createData( min, max, 100 );
+        internal void CreateData( int min, int max ) => CreateData( min, max, 100 );
 
-        internal void saveData() => dataGenerator.saveData( DataSet );
+        internal void SaveData() => dataGenerator.SaveData( DataSet );
     }
 }

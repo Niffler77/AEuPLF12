@@ -7,7 +7,7 @@ namespace Testdatengenerator.DataGenerators
 {
     internal class DataGeneratorJson : IDataGenerator
     {
-        public void saveData( List<double> input )
+        public void SaveData( List<double> input )
         {
             var json = JsonSerializer.Serialize( input );
             var tempfile = Path.GetTempPath();

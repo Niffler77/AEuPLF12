@@ -1,20 +1,27 @@
-﻿namespace ObserverMusterExample
+﻿using ObserverMusterExample.EventListeners;
+
+namespace ObserverMusterExample
 {
     internal class Editor
     {
-        public EventManager eventManager { get; }
+        public EventManager EventManager { get; } = new();
 
-        public Editor()
+        internal Editor()
         {
-            eventManager = new EventManager();
+            EventManager.Subscribe( EventType.Open, new EmailAlertsListener() );
+            EventManager.Subscribe( EventType.Open, new LoggingListener() );
         }
 
-        public void openFile()
+        public void OpenFile()
         {
+            Console.WriteLine( "OpenFile" );
+            EventManager.Notify( EventType.Open, "file" );
         }
 
-        public void saveFile()
+        public void SaveFile()
         {
+            Console.WriteLine( "SaveFile" );
+            EventManager.Notify( EventType.Save, "file" );
         }
     }
 }
