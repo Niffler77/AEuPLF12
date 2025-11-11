@@ -8,11 +8,12 @@ namespace TestDatenGenerator
     {
         internal List<double> DataSet;
 
-        internal IDataGenerator dataGenerator;
+        private IDataGenerator dataGenerator;
 
         internal DataGenerator( IDataGenerator dataGenerator )
         {
             DataSet = new List<double>();
+            this.dataGenerator = dataGenerator;
         }
 
         internal void createData( double min, double max, int amount )
@@ -26,6 +27,6 @@ namespace TestDatenGenerator
 
         internal void createData( int min, int max ) => createData( min, max, 100 );
 
-        internal virtual void saveData() => dataGenerator.saveData( DataSet );
+        internal void saveData() => dataGenerator.saveData( DataSet );
     }
 }
