@@ -48,7 +48,7 @@ namespace Tree
 
         public string PrintPretty( string indent, bool last )
         {
-            StringBuilder sb = new StringBuilder();
+            var sb = new StringBuilder();
             sb.Append( indent );
             if( last )
             {
@@ -61,7 +61,7 @@ namespace Tree
                 indent += "| ";
             }
 
-            sb.AppendLine( Data.ToString() );
+            sb.AppendLine( Data?.ToString() );
 
             for( int i = 0; i < children.Count; i++ )
             {
