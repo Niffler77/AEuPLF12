@@ -1,12 +1,15 @@
-﻿namespace Dateneinlesen
+﻿using System.Xml;
+using System.Xml.Serialization;
+
+namespace Dateneinlesen
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            CSVImport();
-            CSVPokemonImport();
-            JSONImport();
+            //CSVImport();
+            //CSVPokemonImport();
+            //JSONImport();
             XMLImport();
 
         }
@@ -56,14 +59,22 @@
 
         private static void XMLImport()
         {
-            string path = "friends.xml";
-            var xmlImport = File.ReadAllText(path);
-            //var friends = XmlSerializer.Deserialize(xmlImport);
-            //foreach (var friend in friends)
-            //{
-                //Console.WriteLine($"{friend.Name}, {friend.Age}, {friend.City}");
-            //}
-            Console.WriteLine();
+            string path = "catalog.xml";
+            var xmlImport = XmlReader.Create(path);
+
+            XmlSerializer serializer = new XmlSerializer(typeof(catalog));
+            catalog liste = (catalog)serializer.Deserialize(xmlImport);
+
+            foreach (var song in liste.songs)
+            {
+                Console.WriteLine($"ID: {song.Id}");
+                Console.WriteLine($"Titel: {song.Title}");
+                Console.WriteLine($"Artist: {song.Artist}");
+                Console.WriteLine($"Preis: {song.Price}");
+                Console.WriteLine($"Jahr: {song.Year}");
+                Console.WriteLine("-----------");
+            }
+
         }
 
         private static void JSONImport()
