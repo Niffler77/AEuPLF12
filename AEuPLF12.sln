@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortingAlgorithms", "Sortin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileCrawler", "FileCrawler\FileCrawler.csproj", "{F7ABA850-842A-425E-A14A-C0717A0BE8D2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Decrpyt", "Decrpyt\Decrpyt.csproj", "{8AB46E5F-A5D6-43DD-B3B6-CD6DB1DA9738}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{F7ABA850-842A-425E-A14A-C0717A0BE8D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7ABA850-842A-425E-A14A-C0717A0BE8D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7ABA850-842A-425E-A14A-C0717A0BE8D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AB46E5F-A5D6-43DD-B3B6-CD6DB1DA9738}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AB46E5F-A5D6-43DD-B3B6-CD6DB1DA9738}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AB46E5F-A5D6-43DD-B3B6-CD6DB1DA9738}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AB46E5F-A5D6-43DD-B3B6-CD6DB1DA9738}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
